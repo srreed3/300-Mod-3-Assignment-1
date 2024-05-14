@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+<body>
+    <!-- user greeting -->
+    <div id="greeting" style="display: none;"></div>
+
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button><br>
+
+
+    <!-- display error message if incorrect input -->    
+    <div id="error" style="display: none; color: red;"></div>
+
+
+    <!-- dropdown list -->
+    <select id="ticketType" onchange="showFields()">
+        <option value="computer">Computer Support</option>
+        <option value="software">Software Support</option>
+        <option value="network">Network Support</option>
+    </select>
+    <div id="computerFields" style="display: none;">
+        <!-- Computer support fields here -->
+    </div>
+    <div id="softwareFields" style="display: none;">
+        <!-- Software support fields here -->
+    </div>
+    <div id="networkFields" style="display: none;">
+        <!-- Network support fields here -->
+    </div>
+    
+
+    <!-- validate form info -->
+    <form id="supportForm" onsubmit="return validateForm()">
+        <input type="text" id="name" placeholder="Your Name">
+        <input type="email" id="email" placeholder="Your Email">
+        <button type="submit">Submit</button>
+    </form>
+    <div id="errorMessages" style="color: red;"></div>
+
+    <script src='main.js'></script>
+</body>
+</html>
